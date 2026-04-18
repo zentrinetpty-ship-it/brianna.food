@@ -700,11 +700,19 @@ async def on_startup():
 
 app.include_router(api)
 
-frontend_url = os.environ.get("FRONTEND_URL", "http://localhost:3000")
+cors_origins_env = os.environ.get("CORS_ORIGINS", "*")
+if cors_origins_env.strip() == "*":
+    allow_origins = ["*"]
+    # Browsers reject allow_credentials=True with wildcard origin.
+    allow_credentials = False
+else:
+    allow_origins = [o.strip() for o in cors_origins_env.split(",") if o.strip()]
+    allow_credentials = True
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[frontend_url, "http://localhost:3000"],
-    allow_credentials=True,
+    allow_origins=allow_origins,
+    allow_credentials=allow_credentials,
     allow_methods=["*"],
     allow_headers=["*"],
 )
