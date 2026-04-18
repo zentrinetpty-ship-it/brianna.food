@@ -60,20 +60,20 @@ function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "bg-white/90 backdrop-blur-xl border-b border-black/5 shadow-sm" : "bg-nigeria-cream"}`}
+      className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-xl border-b-2 border-nigeria-dark/10 shadow-sm" : "bg-nigeria-cream"}`}
       data-testid="site-header"
     >
       <div className="brianna-container flex items-center gap-4 py-4">
         <Link to="/" className="flex items-center gap-2 group" data-testid="logo-link">
           <div className="relative">
-            <div className="w-10 h-10 rounded-full bg-nigeria-lime flex items-center justify-center font-black text-nigeria-dark text-xl shadow-[0_4px_12px_rgba(149,214,0,0.4)] group-hover:rotate-12 transition-transform duration-300">
+            <div className="w-11 h-11 bg-nigeria-lime flex items-center justify-center font-black text-nigeria-dark text-2xl shadow-[0_4px_12px_rgba(126,214,0,0.5)] group-hover:rotate-6 transition-transform duration-300" style={{ borderRadius: "6px" }}>
               B
             </div>
-            <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-nigeria-orange border-2 border-white" />
+            <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-nigeria-orange border-2 border-white" style={{ borderRadius: "2px" }} />
           </div>
           <div className="flex flex-col leading-none">
             <span className="font-display font-black text-xl text-nigeria-dark">Brianna</span>
-            <span className="text-[10px] font-bold tracking-[0.3em] text-nigeria-orange -mt-0.5">.APP</span>
+            <span className="text-[10px] font-black tracking-[0.3em] text-nigeria-orange -mt-0.5">.APP</span>
           </div>
         </Link>
 
@@ -84,8 +84,9 @@ function Header() {
               to={l.to}
               end={l.to === "/"}
               className={({ isActive }) =>
-                `px-4 py-2 rounded-full text-sm font-bold transition-all ${isActive ? "bg-nigeria-dark text-white" : "text-nigeria-dark hover:bg-nigeria-dark/5"}`
+                `px-4 py-2 text-sm font-bold transition-all ${isActive ? "bg-nigeria-dark text-white" : "text-nigeria-dark hover:bg-nigeria-dark/5"}`
               }
+              style={{ borderRadius: "4px" }}
               data-testid={`nav-${l.label.toLowerCase().replace(" ", "-")}`}
             >
               {l.label}
@@ -99,7 +100,8 @@ function Header() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search egusi, stockfish, ogbono..."
-            className="pl-11 pr-4 h-11 rounded-full bg-white border-2 border-transparent focus-visible:border-nigeria-lime focus-visible:ring-0 font-medium"
+            className="pl-11 pr-4 h-11 bg-white border-2 border-nigeria-dark/10 focus-visible:border-nigeria-lime focus-visible:ring-0 font-medium"
+            style={{ borderRadius: "4px" }}
             data-testid="search-input"
           />
         </form>
@@ -108,11 +110,11 @@ function Header() {
           {user && user !== false ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full h-11 w-11 bg-nigeria-dark/5 hover:bg-nigeria-dark/10" data-testid="account-menu-btn">
+                <Button variant="ghost" size="icon" className="h-11 w-11 bg-nigeria-dark/5 hover:bg-nigeria-dark/10" style={{ borderRadius: "4px" }} data-testid="account-menu-btn">
                   <User className="w-5 h-5 text-nigeria-dark" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56 rounded-2xl" data-testid="account-dropdown">
+              <DropdownMenuContent align="end" className="w-56" data-testid="account-dropdown">
                 <DropdownMenuLabel className="font-heading">Hey, {user.name?.split(" ")[0] || "friend"}!</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => navigate("/account")} data-testid="menu-account">
@@ -139,14 +141,15 @@ function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <Link to="/login" className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-bold text-nigeria-dark hover:bg-nigeria-dark/5 transition" data-testid="login-link">
+            <Link to="/login" className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 text-sm font-bold text-nigeria-dark hover:bg-nigeria-dark/5 transition" style={{ borderRadius: "4px" }} data-testid="login-link">
               <User className="w-4 h-4" /> Sign in
             </Link>
           )}
 
           <button
             onClick={() => setOpen(true)}
-            className="relative rounded-full h-11 w-11 flex items-center justify-center bg-nigeria-lime hover:bg-[#7CB342] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(149,214,0,0.4)]"
+            className="relative h-11 w-11 flex items-center justify-center bg-nigeria-lime hover:bg-[#6FC000] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(126,214,0,0.5)]"
+            style={{ borderRadius: "4px" }}
             data-testid="cart-button"
             aria-label="Open cart"
           >
@@ -155,7 +158,8 @@ function Header() {
               <motion.span
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-                className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-nigeria-orange text-white text-[11px] font-black flex items-center justify-center"
+                className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-nigeria-orange text-white text-[11px] font-black flex items-center justify-center"
+                style={{ borderRadius: "4px" }}
                 data-testid="cart-count"
               >
                 {count}
@@ -165,7 +169,7 @@ function Header() {
 
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden rounded-full h-11 w-11" data-testid="mobile-menu-btn">
+              <Button variant="ghost" size="icon" className="lg:hidden h-11 w-11" style={{ borderRadius: "4px" }} data-testid="mobile-menu-btn">
                 <Menu className="w-5 h-5" />
               </Button>
             </SheetTrigger>
@@ -180,7 +184,7 @@ function Header() {
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search products..."
-                    className="pl-11 h-12 rounded-full bg-muted"
+                    className="pl-11 h-12 rounded-sm bg-muted"
                     data-testid="mobile-search-input"
                   />
                 </form>
@@ -191,7 +195,7 @@ function Header() {
                     end={l.to === "/"}
                     onClick={() => setMobileOpen(false)}
                     className={({ isActive }) =>
-                      `px-4 py-3 rounded-xl text-lg font-bold ${isActive ? "bg-nigeria-dark text-white" : "text-nigeria-dark hover:bg-nigeria-dark/5"}`
+                      `px-4 py-3 rounded-sm text-lg font-bold ${isActive ? "bg-nigeria-dark text-white" : "text-nigeria-dark hover:bg-nigeria-dark/5"}`
                     }
                     data-testid={`mobile-nav-${l.label.toLowerCase().replace(" ", "-")}`}
                   >
@@ -202,7 +206,7 @@ function Header() {
                   <Link
                     to="/login"
                     onClick={() => setMobileOpen(false)}
-                    className="mt-4 px-4 py-3 rounded-xl text-lg font-bold bg-nigeria-lime text-nigeria-dark text-center"
+                    className="mt-4 px-4 py-3 rounded-sm text-lg font-black bg-nigeria-lime text-nigeria-dark text-center"
                     data-testid="mobile-login"
                   >
                     Sign in
@@ -225,10 +229,10 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-12 h-12 rounded-full bg-nigeria-lime flex items-center justify-center font-black text-nigeria-dark text-2xl">B</div>
+              <div className="w-12 h-12 bg-nigeria-lime flex items-center justify-center font-black text-nigeria-dark text-2xl" style={{ borderRadius: "6px" }}>B</div>
               <div>
                 <div className="font-display font-black text-2xl">Brianna</div>
-                <div className="text-[10px] font-bold tracking-[0.3em] text-nigeria-lime -mt-1">.APP</div>
+                <div className="text-[10px] font-black tracking-[0.3em] text-nigeria-lime -mt-1">.APP</div>
               </div>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed max-w-sm">
@@ -236,7 +240,7 @@ function Footer() {
             </p>
             <div className="flex gap-3 mt-6">
               {[Instagram, Facebook, Twitter].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-nigeria-lime hover:text-nigeria-dark flex items-center justify-center transition" data-testid={`social-${i}`}>
+                <a key={i} href="#" className="w-10 h-10 bg-white/10 hover:bg-nigeria-lime hover:text-nigeria-dark flex items-center justify-center transition" style={{ borderRadius: "4px" }} data-testid={`social-${i}`}>
                   <Icon className="w-4 h-4" />
                 </a>
               ))}

@@ -49,84 +49,81 @@ export default function Home() {
 
   return (
     <div data-testid="home-page">
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-nigeria-cream pt-10 md:pt-16 pb-20 md:pb-28" data-testid="hero-section">
-        <div className="absolute inset-0 ankara-pattern opacity-60 pointer-events-none" />
-        <div className="brianna-container relative grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          <div className="lg:col-span-7 relative z-10">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-black/5 shadow-sm mb-6" data-testid="hero-badge">
-              <span className="w-2 h-2 rounded-full bg-nigeria-lime animate-pulse" />
-              <span className="text-xs font-black tracking-widest text-nigeria-dark uppercase">Now delivering to 40+ countries</span>
-            </motion.div>
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-display font-black tracking-[-0.04em] text-nigeria-dark text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]"
-            >
-              Naija kitchen,<br />
-              <span className="relative inline-block">
-                <span className="text-nigeria-orange">shipped worldwide.</span>
-                <svg className="absolute -bottom-3 left-0 w-full" viewBox="0 0 300 12" fill="none">
-                  <path d="M2 9 Q 75 2, 150 6 T 298 5" stroke="#95D600" strokeWidth="5" strokeLinecap="round" />
-                </svg>
-              </span>
-            </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="mt-8 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
-              Fresh <b className="text-nigeria-dark">egusi</b>, premium <b className="text-nigeria-dark">stockfish</b>, aromatic <b className="text-nigeria-dark">oha leaves</b>, scotch bonnets and 500+ authentic Nigerian essentials — delivered to your door in 3-5 days. Taste home, anywhere.
-            </motion.p>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.45 }} className="mt-10 flex flex-wrap gap-3">
-              <Link to="/shop" className="btn-primary" data-testid="hero-shop-btn">
-                Shop the market <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link to="/monthly-box" className="btn-outline-dark" data-testid="hero-box-btn">
-                Explore Monthly Box
-              </Link>
-            </motion.div>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.7 }} className="mt-10 flex items-center gap-6 text-sm">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className={`w-9 h-9 rounded-full border-2 border-white ${i % 2 ? "bg-nigeria-lime" : "bg-nigeria-orange"}`} />
-                ))}
-              </div>
-              <div>
-                <div className="flex items-center gap-1">
-                  {[1, 2, 3, 4, 5].map((i) => (<Star key={i} className="w-4 h-4 fill-nigeria-amber text-nigeria-amber" />))}
-                  <span className="ml-2 font-black text-nigeria-dark">4.9/5</span>
-                </div>
-                <div className="text-muted-foreground text-xs mt-0.5">From 12,000+ happy diasporans</div>
-              </div>
-            </motion.div>
-          </div>
+      {/* HERO — full-width cinematic */}
+      <section className="relative overflow-hidden bg-nigeria-dark" data-testid="hero-section">
+        <div className="absolute inset-0">
+          <img
+            src="/brianna-hero.jpg"
+            alt="Authentic Nigerian groceries — stockfish, smoked catfish, ugwu leaf, snails, crayfish, egusi, ata rodo, plantains and more"
+            className="w-full h-full object-cover animate-zoom-slow"
+            data-testid="hero-image"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-nigeria-dark/70 via-nigeria-dark/40 to-nigeria-dark/85" />
+          <div className="absolute inset-0 ankara-pattern opacity-20 mix-blend-overlay" />
+        </div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="lg:col-span-5 relative z-10">
-            <div className="relative">
-              <div className="absolute -top-6 -left-6 w-32 h-32 rounded-full bg-nigeria-lime blur-3xl opacity-40" />
-              <div className="absolute -bottom-6 -right-6 w-40 h-40 rounded-full bg-nigeria-orange blur-3xl opacity-30" />
-              <motion.div animate={{ rotate: [0, 2, -2, 0] }} transition={{ duration: 8, repeat: Infinity }} className="relative rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
-                <img
-                  src="https://static.prod-images.emergentagent.com/jobs/50949266-3fc6-4e36-a0b9-e75b1e1a578a/images/59bb0bd914161174f67575629cea61a93a3c6066edee58574616f9b331e0f27a.png"
-                  alt="Brianna Premium Monthly Box"
-                  className="w-full h-auto object-cover"
-                  data-testid="hero-image"
-                />
-              </motion.div>
-              {/* Floating cards */}
-              <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3, repeat: Infinity }} className="absolute -left-4 top-8 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 border border-black/5">
-                <div className="w-10 h-10 rounded-full bg-nigeria-lime flex items-center justify-center"><Leaf className="w-5 h-5 text-nigeria-dark" /></div>
-                <div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Fresh</div>
-                  <div className="font-bold text-sm text-nigeria-dark">From Lagos</div>
-                </div>
-              </motion.div>
-              <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 3.5, repeat: Infinity, delay: 0.5 }} className="absolute -right-4 bottom-10 bg-nigeria-dark text-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-nigeria-orange flex items-center justify-center"><Truck className="w-5 h-5 text-white" /></div>
-                <div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-nigeria-lime">Ships in</div>
-                  <div className="font-bold text-sm">3-5 days</div>
-                </div>
-              </motion.div>
-            </div>
+        <div className="relative brianna-container min-h-[92vh] md:min-h-[94vh] flex flex-col items-center justify-center text-center py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-nigeria-lime text-nigeria-dark font-black uppercase tracking-[0.25em] text-xs shadow-lg"
+            data-testid="hero-badge"
+            style={{ borderRadius: "4px" }}
+          >
+            <span className="w-2 h-2 rounded-full bg-nigeria-dark animate-pulse" />
+            Now delivering to 40+ countries
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="mt-8 font-display font-black tracking-[-0.03em] text-white text-5xl sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.9] hero-title-glow max-w-5xl"
+          >
+            Naija kitchen,<br />
+            <span className="text-nigeria-lime">shipped worldwide.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-8 text-lg md:text-2xl text-white/90 max-w-3xl leading-relaxed font-medium"
+          >
+            Fresh <b className="text-nigeria-lime">egusi</b>, premium <b className="text-nigeria-lime">stockfish</b>, smoked <b className="text-nigeria-lime">catfish</b>, <b className="text-nigeria-lime">ugwu leaves</b>, <b className="text-nigeria-lime">snails</b>, <b className="text-nigeria-lime">crayfish</b> and 500+ authentic Nigerian essentials — delivered to your door in 3–5 days.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-10 flex flex-wrap justify-center gap-4"
+          >
+            <Link to="/shop" className="btn-primary text-base" data-testid="hero-shop-btn">
+              Shop the market <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link to="/monthly-box" className="btn-white text-base" data-testid="hero-box-btn">
+              Explore Monthly Box
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.75 }}
+            className="mt-14 grid grid-cols-3 gap-8 md:gap-14 max-w-2xl"
+          >
+            {[
+              { n: "500+", l: "Products" },
+              { n: "40+", l: "Countries" },
+              { n: "4.9★", l: "12k diasporans" },
+            ].map((s) => (
+              <div key={s.l} className="text-center">
+                <div className="font-display font-black text-4xl md:text-5xl text-nigeria-lime">{s.n}</div>
+                <div className="text-xs md:text-sm font-bold uppercase tracking-widest text-white/70 mt-1">{s.l}</div>
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>

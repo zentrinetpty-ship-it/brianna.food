@@ -33,11 +33,10 @@ export function ProductCard({ product, index = 0 }) {
           </span>
         )}
         <button
-          onClick={(e) => {
-            e.preventDefault();
-            setLiked((v) => !v);
+          onClick={() => setLiked((v) => !v)}
           }}
-          className={`absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md transition ${liked ? "bg-nigeria-orange text-white" : "bg-white/80 text-nigeria-dark hover:bg-white"}`}
+          className={`absolute top-3 right-3 w-9 h-9 flex items-center justify-center backdrop-blur-md transition ${liked ? "bg-nigeria-orange text-white" : "bg-white/85 text-nigeria-dark hover:bg-white"}`}
+          style={{ borderRadius: "4px" }}
           aria-label="Save to wishlist"
           data-testid={`wishlist-toggle-${product.slug}`}
         >
