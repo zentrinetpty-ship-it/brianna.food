@@ -1,0 +1,152 @@
+{
+  "theme": "light",
+  "archetype": "Archetype 1 (Organic & Earthy) mixed with Archetype 6 (Vibrant Play) for Dopamine-Inducing Brightness",
+  "colors": {
+    "background": {
+      "default": "#FAF9F6",
+      "paper": "#FFFFFF",
+      "muted": "#F3F4F6"
+    },
+    "primary": {
+      "DEFAULT": "#95D600",
+      "hover": "#7CB342",
+      "foreground": "#000000"
+    },
+    "secondary": {
+      "DEFAULT": "#FF5500",
+      "hover": "#E64A00",
+      "foreground": "#FFFFFF"
+    },
+    "accent": {
+      "DEFAULT": "#FFB300",
+      "foreground": "#000000"
+    },
+    "neutral": {
+      "dark_green": "#064E3B",
+      "dark_green_hover": "#043B2C",
+      "text_main": "#111827",
+      "text_muted": "#4B5563"
+    },
+    "border": "#E5E7EB"
+  },
+  "typography": {
+    "font_families": {
+      "heading": "Cabinet Grotesk, sans-serif",
+      "body": "Satoshi, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "import_links": [
+      "https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@900,800,700,500,400&f[]=satoshi@900,700,500,400&display=swap"
+    ],
+    "hierarchy": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-neutral-dark_green",
+      "h2": "text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-dark_green",
+      "h3": "text-2xl md:text-3xl font-bold tracking-tight text-neutral-text_main",
+      "h4": "text-xl font-bold text-neutral-text_main",
+      "body": "text-base font-normal text-neutral-text_muted leading-relaxed",
+      "label": "text-xs font-bold uppercase tracking-[0.2em] text-neutral-text_muted"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous Spacing, Mobile-First. Padding scales 2x normal.",
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8",
+    "section": "py-16 md:py-24 lg:py-32"
+  },
+  "components": {
+    "button": {
+      "primary": "bg-secondary text-white font-bold rounded-full px-8 py-4 hover:bg-secondary-hover hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(255,85,0,0.4)] transition-all duration-300",
+      "outline": "bg-transparent border-2 border-neutral-dark_green text-neutral-dark_green font-bold rounded-full px-8 py-4 hover:bg-neutral-dark_green hover:text-white transition-all duration-300"
+    },
+    "card": {
+      "product": "bg-white rounded-2xl border border-black/5 p-4 flex flex-col gap-4 shadow-sm hover:shadow-[0_12px_40px_rgba(149,214,0,0.15)] hover:border-primary transition-all duration-300 group cursor-pointer",
+      "subscription_tier": "bg-white rounded-3xl border-2 border-transparent p-8 flex flex-col gap-6 shadow-lg hover:border-primary transition-all duration-300 relative overflow-hidden cursor-pointer"
+    },
+    "header": {
+      "style": "sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-black/5 transition-all duration-300"
+    },
+    "inputs": {
+      "style": "bg-neutral-muted border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+    },
+    "badges": {
+      "style": "bg-primary text-black text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full"
+    }
+  },
+  "motion_and_interactions": {
+    "hover": "All interactive elements must lift (-translate-y-1) and cast a color-tinted ambient shadow.",
+    "staggered_lists": "Use Framer Motion to stagger entrance of product cards (0.1s delay each).",
+    "image_zoom": "Images inside cards must scale-105 on group-hover inside an overflow-hidden container.",
+    "marquee": "Use react-fast-marquee for a vibrant 'Living Texture' banner featuring Nigerian ingredients in bold outline text.",
+    "page_transition": "Fade in and slide up slightly on mount."
+  },
+  "icons_and_assets": {
+    "library": "lucide-react",
+    "stroke_width": 2
+  },
+  "image_urls": {
+    "hero": [
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/50949266-3fc6-4e36-a0b9-e75b1e1a578a/images/59bb0bd914161174f67575629cea61a93a3c6066edee58574616f9b331e0f27a.png",
+        "description": "High-end product photography of a premium monthly subscription box filled with fresh Nigerian groceries, yams, plantains, and spices.",
+        "category": "hero_main",
+        "alt_text": "Brianna Box - Premium Nigerian Grocery Delivery"
+      }
+    ],
+    "backgrounds": [
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/50949266-3fc6-4e36-a0b9-e75b1e1a578a/images/9e4a1c11dfd1b3761e04511ae5034d7da88237196db9b23f05e48632b3b0e61f.png",
+        "description": "Abstract modern background pattern featuring subtle African Ankara geometric motifs.",
+        "category": "texture_overlay",
+        "alt_text": "Ankara pattern texture"
+      }
+    ],
+    "products": [
+      {
+        "url": "https://images.unsplash.com/photo-1552709607-08d00227833d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHw0fHxuaWdlcmlhbiUyMGZvb2QlMjBqb2xsb2YlMjBwbGFudGFpbiUyMG1hcmtldHxlbnwwfHx8fDE3NzY1MDI2Mjh8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Fresh yellow plantains/bananas",
+        "category": "produce",
+        "alt_text": "Fresh Plantains"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1706793990285-b2a7d9aaf17d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwzfHxzcGljZXMlMjBtYXJrZXR8ZW58MHx8fHwxNzc2NTAyNjQ5fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Colorful spices in buckets (Egusi, Ogbono representations)",
+        "category": "spices",
+        "alt_text": "African Spices"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1610663711502-35f870cfaea2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwyfHxib3dsJTIwb2YlMjByaWNlJTIwZ3JhaW58ZW58MHx8fHwxNzc2NTAyNjU1fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Bowl of grain/powder (Garri/Fufu representation)",
+        "category": "grains",
+        "alt_text": "Garri Cassava Flakes"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1743674452796-ad8d0cf38005?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxib3dsJTIwb2YlMjByaWNlJTIwZ3JhaW58ZW58MHx8fHwxNzc2NTAyNjU1fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Cooked rice (Jollof prep representation)",
+        "category": "grains",
+        "alt_text": "Premium Rice"
+      }
+    ],
+    "lifestyle": [
+      {
+        "url": "https://images.unsplash.com/photo-1765584829997-12ab011bb5b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxuaWdlcmlhbiUyMGZvb2QlMjBqb2xsb2YlMjBwbGFudGFpbiUyMG1hcmtldHxlbnwwfHx8fDE3NzY1MDI2Mjh8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Woman preparing food at an outdoor market stall (Authentic Nigerian Market Vibe)",
+        "category": "community",
+        "alt_text": "Nigerian Food Market"
+      }
+    ]
+  },
+  "testing_requirements": {
+    "attributes": "All interactive elements MUST include data-testid. Format: kebab-case, role-based (e.g., data-testid='add-to-cart-button', data-testid='category-filter-spices')."
+  },
+  "instructions_to_main_agent": [
+    "Use Tailwind CSS for all custom layouts. Do not rely heavily on Shadcn 'Card' components for the main marketing landing page; use raw divs with Bento Grid strategy for asymmetrical flow.",
+    "For user inputs, modals, and the cart drawer, deeply customize Shadcn UI components. Ensure buttons match the vibrant orange/lime green theme.",
+    "Implement a marquee running across the page with words like 'EGUSI • STOCKFISH • OHA LEAF • PLANTAINS' using a large outline text style.",
+    "Set the typography globally using Cabinet Grotesk for headings and Satoshi for body text.",
+    "Include a 'Monthly Box Builder' section showcasing Starter, Family, and Premium tiers.",
+    "Ensure the hero section uses the generated subscription box image prominently alongside bold, massive typography.",
+    "Create an AI Recipe Assistant floating action button that opens a chat interface styled in the brand's dark green.",
+    "Make the background of the app #FAF9F6, not pure white, and use the provided ankara texture as a subtle, low-opacity (e.g., 5-10%) background overlay in key sections like the Hero or Footer.",
+    "CRITICAL: Include data-testid attributes on every button, link, and input."
+  ]
+}
